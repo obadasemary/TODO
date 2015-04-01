@@ -22,10 +22,6 @@ app.controller('TodoCtrl',['$scope' , function ($scope) {
         });
     };
 
-    $scope.add = function (info) {
-        console.log("add"+info);
-    }
-
     $scope.addTodo = function () {
         $scope.todos.push({text:$scope.formTodoText, done:false});
         $scope.formTodoText = "";
