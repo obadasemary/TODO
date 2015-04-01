@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="todo">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>TODO</title>
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/todo.css">
+</head>
+<body>
+<div ng-controller="TodoCtrl">
+    <h2>Total Todos : {{getTotalTodos()}}</h2>
+    <ul class="unstyled">
+        <li ng-repeat="todo in todos">
+            <input type="checkbox" ng-model="todo.done">
+            <span class="done-{{todo.done}}">{{todo.text}}</span>
+        </li>
+    </ul>
+    <form class="form-horizontal">
+        <input type="text" ng-model="formTodoText" ng-model-instant>
+        <button class="btn" ng-click="addTodo()"><i class="glyphicon glyphicon-plus"></i> Add</button>
+    </form>
+    <button class="btn" ng-click="clearCompleted()"><i class="glyphicon glyphicon-trash"></i> Clear Completed</button>
+</div>
+
+
+
+
+<script src="../bower_components/angular/angular.min.js"></script>
+<script src="../bower_components/underscore/underscore-min.js"></script>
+<script src="js/todo.js"></script>
+</body>
+</html>
